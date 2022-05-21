@@ -1,4 +1,4 @@
 pushWorkouts = ["Flat DB Bench Press", "Shoulder Press", "Incline DB Press", "Cable Lateral Raises", "DB Lateral Raises", "Decline Cable Flyes", "Cable Flyes", "Seated Flyes", "Tricep Pushdowns", "Tricep Overhead Extensions"]
-pullWorkouts = ["Bar Lat Pulldowns", "Seated Cable Rows", "Chest-assisted DB Rows", "Single Arm Lat Pulldown", "Face Pulls", "Shrugs", "Bar Bicep Curls", "Long Head Curls", "Hammer Curl Holds"]
+pullWorkouts = ["Bar Lat Pulldowns", "Seated Cable Rows", "Chest-assisted DB Rows", "Single Arm Lat Pulldown", "Face Pulls", "Rear Delt Crossovers", "Shrugs", "Bar Bicep Curls", "Long Head Curls", "Hammer Curl Holds"]
 legWorkouts = ["Squats", "Bulgarian Split Squats", "Hack Squats", "Leg Extensions", "RDLs", "Seated Calf Raises"]
 pushWorkoutsNoCable=["Flat DB Bench Press", "Shoulder Press", "Incline DB Press", "Lateral Raises DB", "Seated Flyes", "Tricep Pushdowns", "Overhead Tricep Extensions"]
