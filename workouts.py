@@ -1,4 +1,3 @@
-pushWorkouts = ["Flat DB Bench Press", "Shoulder Press", "Incline DB Press", "Cable Lateral Raises", "DB Lateral Raises", "Decline Cable Flyes", "Cable Flyes", "Seated Flyes", "Tricep Pushdowns", "Tricep Overhead Extensions"]
-pullWorkouts = ["Bar Lat Pulldowns", "Seated Cable Rows", "Chest-assisted DB Rows", "Single Arm Lat Pulldown", "Face Pulls", "Rear Delt Crossovers", "Shrugs", "Bar Bicep Curls", "Long Head Curls", "Hammer Curl Holds"]
-legWorkouts = ["Squats", "Bulgarian Split Squats", "Hack Squats", "Leg Extensions", "RDLs", "Seated Calf Raises"]
-pushWorkoutsNoCable=["Flat DB Bench Press", "Shoulder Press", "Incline DB Press", "Lateral Raises DB", "Seated Flyes", "Tricep Pushdowns", "Overhead Tricep Extensions"]
+pushWorkouts = ["Flat DB Bench Press", "Incline DB Press", "Shoulder Press", "Cable Lateral Raises", "DB Lateral Raises", "Decline Cable Flyes", "Cable Flyes", "Seated Flyes", "Tricep Pushdowns", "Tricep Overhead Extensions"]
+pullWorkouts = ["Bar Lat Pulldowns", "Seated Cable Rows", "Chest-assisted DB Rows", "Chest-assisted Rows (Machine)", "Single Arm Lat Pulldown", "Face Pulls", "Rear Delt Crossovers", "Shrugs", "Bar Bicep Curls", "Long Head Curls", "Bicep Machine", "Incline Bicep Curls", "Hammer Curl Holds"]
+legWorkouts = ["Squats", "Bulgarian Split Squats", "Leg Press", "Hack Squats", "Leg Extensions", "RDLs", "Hamstring Curls", "Seated Calf Raises"]

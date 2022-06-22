@@ -1,5 +1,6 @@
 import csv
 from workouts import *
+from datetime import date
 
 push = open("../../Desktop/Online Work/Gym_Tracking/Push.csv", 'w', newline='')
 writerPush = csv.writer(push)
@@ -10,7 +11,13 @@ writerPull = csv.writer(pull)
 legs = open("../../Desktop/Online Work/Gym_Tracking/Legs.csv", 'w', newline='')
 writerLegs = csv.writer(legs)
 
+currentYear = date.today().strftime("%Y")
+dayMonthOfWorkout = input("Enter date of workout (day month): ")
+dateOfWorkout = dayMonthOfWorkout + currentYear
+workoutType = input("Choose your workout: ")
+
 def writeWorkouts(workoutType):
+    writeDateHeader()
     for workout in workoutType:
             no_of_sets = input("Number of sets for " + workout + ": ")
             if no_of_sets == "s":
@@ -36,7 +43,13 @@ def writeWorkouts(workoutType):
             else:
                 writerLegs.writerow([workout, weight_output, rep_output])
 
-workoutType = input("Choose your workout: ")
+def writeDateHeader():
+    if (workoutType == "push"):
+        writerPush.writerow([dateOfWorkout, "Weight", "Reps"])
+    elif (workoutType == "pull"):
+        writerPull.writerow([dateOfWorkout, "Weight", "Reps"])
+    else:
+        writerLegs.writerow([dateOfWorkout, "Weight", "Reps"])
 
 while workoutType != "end":
     if workoutType == "push":
