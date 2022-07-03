@@ -19,6 +19,21 @@ Once that is complete, then it prompts the user to either **continue with a new 
 
 Currently, the program is outputting these formatted fields onto CSV files using the csv library.
 
+### Method 2: Outputting Directly to Google Sheets
+Also in this repository, you can see the `workout_tracking.py` file, in which I implemented this method.
+
+I import my project secrets (spreadsheet ID, and client secret for OAuth 2.0 authentication), and then I also have the same `writeWorkouts` method in this file as well.
+
+I have made some differences to how this version of the program behaves, where it prompts the user for the date and type of the workout they want to track.
+Next, depending on the type of workout entered, it would start cycling through all of the appropriate workouts and asks **for each exercise:**
+- Number of sets
+- Weights played
+- Number of reps
+
+Once the list of workouts is completed, then it will output to the Google sheet directly, and which worksheet in particular would depend on the user entered value.
+
+#### Cycling through Workouts
+If there is a workout that you skipped, when prompted for the number of sets, enter `s`, and it will go to the next workout.
+
 ## Opportunities for Expansion
-- Outputting directly onto the **Google Sheet** that I track my workouts on.
-- Create a Front-end application (using React.js) to allow for more workout customization.
+- Create a Front-end application to allow for more workout customization.
