@@ -2,3 +2,4 @@ gymtracking-350515-3b1794d4d0e0.json
 client_secret.json
 token_sheets_v4.pickle
 project_secrets.py
+*.pyc

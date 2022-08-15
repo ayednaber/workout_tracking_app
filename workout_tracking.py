@@ -28,15 +28,24 @@ def writeWorkouts(workoutType):
             rep_output = ""
             weights_played = input("Enter your weights separated by a space: ")
             reps_played = input("Enter your reps separated by a space: ")
-            w = weights_played.split(" ")
-            r = reps_played.split(" ")
-            for j in range(len(w)):
-                if j != int(no_of_sets) - 1:
-                    weight_output += w[j] + ", "
-                    rep_output += r[j] + ", "
-                else:
-                    weight_output += w[j] + ")"
-                    rep_output += r[j]
+            if " " in weights_played:
+                w = weights_played.split(" ")
+                r = reps_played.split(" ")
+                for j in range(len(w)):
+                    if j != int(no_of_sets) - 1:
+                        weight_output += w[j] + ", "
+                        rep_output += r[j] + ", "
+                    else:
+                        weight_output += w[j] + ")"
+                        rep_output += r[j]
+            else:
+                weight_output += weights_played + ")"
+                r = reps_played.split(" ")
+                for j in range(len(r)):
+                    if j != int(no_of_sets) - 1:
+                        rep_output += r[j] + ", "
+                    else:
+                        rep_output += r[j]
 
             workouts.append(tuple([workout, weight_output, rep_output]))
     return workouts
@@ -55,11 +64,11 @@ service = Create_Service(AUTH_JSON, API_NAME, API_VERSION, SCOPES)
 mySpreadsheet = service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute() # Getting our spreadsheet object
 
 push_worksheet_name = 'Push!'
-push_cell_range_insert = 'A283'
+push_cell_range_insert = 'A364'
 pull_worksheet_name = 'Pull!'
-pull_cell_range_insert = 'A291'
+pull_cell_range_insert = 'A367'
 legs_worksheet_name = 'Legs!'
-legs_cell_range_insert = 'A195'
+legs_cell_range_insert = 'A238'
 values = tuple(writeWorkouts(workout_type))
 
 value_range_body = {
