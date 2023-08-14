@@ -2,18 +2,19 @@ import csv
 from workouts import *
 from datetime import date
 
-push = open("../../Desktop/Online Work/Gym_Tracking/Push.csv", 'w', newline='')
+push = open("./ppl_spreadsheets/Push.csv", 'w', newline='')
 writerPush = csv.writer(push)
 
-pull = open("../../Desktop/Online Work/Gym_Tracking/Pull.csv", 'w', newline='')
+pull = open("./ppl_spreadsheets/Pull.csv", 'w', newline='')
 writerPull = csv.writer(pull)
 
-legs = open("../../Desktop/Online Work/Gym_Tracking/Legs.csv", 'w', newline='')
+legs = open("./ppl_spreadsheets/Legs.csv", 'w', newline='')
 writerLegs = csv.writer(legs)
 
-currentYear = date.today().strftime("%Y")
+# currentYear = date.today().strftime("%Y")
+currentYear = "2022"
 dayMonthOfWorkout = input("Enter date of workout (day month): ")
-dateOfWorkout = dayMonthOfWorkout + currentYear
+dateOfWorkout = dayMonthOfWorkout + " " + currentYear
 workoutType = input("Choose your workout: ")
 
 def writeWorkouts(workoutType):
@@ -26,15 +27,24 @@ def writeWorkouts(workoutType):
             rep_output = ""
             weights_played = input("Enter your weights separated by a space: ")
             reps_played = input("Enter your reps separated by a space: ")
-            w = weights_played.split(" ")
-            r = reps_played.split(" ")
-            for j in range(len(w)):
-                if j != int(no_of_sets) - 1:
-                    weight_output += w[j] + ", "
-                    rep_output += r[j] + ", "
-                else:
-                    weight_output += w[j] + ")"
-                    rep_output += r[j]
+            if " " in weights_played:
+                w = weights_played.split(" ")
+                r = reps_played.split(" ")
+                for j in range(len(w)):
+                    if j != int(no_of_sets) - 1:
+                        weight_output += w[j] + ", "
+                        rep_output += r[j] + ", "
+                    else:
+                        weight_output += w[j] + ")"
+                        rep_output += r[j]
+            else:
+                weight_output += weights_played + ")"
+                r = reps_played.split(" ")
+                for j in range(len(r)):
+                    if j != int(no_of_sets) - 1:
+                        rep_output += r[j] + ", "
+                    else:
+                        rep_output += r[j]
 
             if (workoutType == pushWorkouts):
                 writerPush.writerow([workout, weight_output, rep_output])

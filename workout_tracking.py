@@ -4,7 +4,8 @@ from project_secrets import SPREADSHEET_ID
 from workouts import *
 from datetime import date
 
-currentYear = date.today().strftime("%Y")
+#currentYear = date.today().strftime("%Y")
+currentYear = "2022"
 dayMonthOfWorkout = input("Enter date of workout (day month): ")
 dateOfWorkout = dayMonthOfWorkout + " " + currentYear
 
@@ -64,11 +65,11 @@ service = Create_Service(AUTH_JSON, API_NAME, API_VERSION, SCOPES)
 mySpreadsheet = service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute() # Getting our spreadsheet object
 
 push_worksheet_name = 'Push!'
-push_cell_range_insert = 'A364'
+push_cell_range_insert = 'A443'
 pull_worksheet_name = 'Pull!'
-pull_cell_range_insert = 'A367'
+pull_cell_range_insert = 'A444'
 legs_worksheet_name = 'Legs!'
-legs_cell_range_insert = 'A238'
+legs_cell_range_insert = 'A300'
 values = tuple(writeWorkouts(workout_type))
 
 value_range_body = {
